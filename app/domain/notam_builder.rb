@@ -17,7 +17,6 @@ class NotamBuilder
 
     def extract_hours_of_service(str)
       str = hours_of_service_extract_str(str)
-      str = hours_of_service_remove_leader(str)
 
       hos  = {}
       dow  = %w(MON TUE WED THU FRI SAT SUN)
@@ -64,10 +63,6 @@ class NotamBuilder
       starts = starts + 3
       ends   = str.index('F)') ? str.index('F)') - 2 : str.length
       str[starts..ends]
-    end
-
-    def hours_of_service_remove_leader(str)
-      str.sub(/^.*SERVICE:?/, '')
     end
   end
 end
