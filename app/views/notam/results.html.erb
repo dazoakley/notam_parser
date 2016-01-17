@@ -1,0 +1,28 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>ICAO</th>
+      <th>MON</th>
+      <th>TUE</th>
+      <th>WED</th>
+      <th>THU</th>
+      <th>FRI</th>
+      <th>SAT</th>
+      <th>SUN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @notams.each do |notam| %>
+      <tr>
+        <td><%= notam.icao %></td>
+        <td><%= notam.hours_of_service[:monday] %></td>
+        <td><%= notam.hours_of_service[:tuesday] %></td>
+        <td><%= notam.hours_of_service[:wednesday] %></td>
+        <td><%= notam.hours_of_service[:thursday] %></td>
+        <td><%= notam.hours_of_service[:friday] %></td>
+        <td><%= notam.hours_of_service[:saturday] %></td>
+        <td><%= notam.hours_of_service[:sunday] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
